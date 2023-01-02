@@ -12,19 +12,39 @@
 
     <!----- ESTILOS ------>
     <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/modal.css">
 
 
     <title>Lista de afazeres</title>
 </head>
 <body>
+
+    <div class="modal transparente" id="modal">
+        <div class="card-modal">
+            <div class="modalX">
+                <button id="modalX">x</button>
+            </div>
+            <p>TAREFA</p>
+            <div>
+                <form id="form">
+                    <input type="text" placeholder="Data para ecexução" name="data" id="data">
+                    <input type="text" placeholder="Titulo" name="titulo" id="titulo">
+                    <textarea placeholder="Descrição de tarefa" name="area-texte" id="texto" cols="30" rows="10"></textarea>
+                    <input class="button" type="submit" value="Salvar" id="salvar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <header>
         <div class="header">
             <p class="logo"><span>DOO</span></p>
-            <button class="buttonMais">+</button>
+            <button class="buttonMais" id="mais">+</button>
         </div>
     </header>
 
-
+    
     <section>
         <div class="home">
             <h1>

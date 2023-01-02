@@ -1,0 +1,102 @@
+.modal{
+    margin-top: -2rem;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(53, 53, 53, 0.329);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .card-modal {
+    width: 54rem;
+    height: 61.2rem;
+    background-color: var(--black);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.modal .card-modal input, textarea {
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 33rem;
+    border-radius: .9rem;
+    resize: vertical;
+    font-family: var(--fonte);
+    box-sizing: border-box;
+}
+
+.modal .card-modal .button {
+    height: 4rem;
+    width: 18rem;
+    border-radius: 0.9rem;
+    font-size: 2rem;
+
+    margin-top: 1rem;
+
+    background-color: var(--blue);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input{
+    display: flex;
+    justify-content: start;
+}
+
+#texto {
+    height: 22.4rem;
+    font-size: 1.5rem;
+}
+
+.transparente {
+    display: none;
+}
+
+#modalX {
+    margin-right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.2rem;
+    font-size: 2rem;
+
+    background-color: var(--blue);
+    color: var(--black);
+
+    margin-left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin-top: -5rem;
+}
+.modalX{
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-right: 5rem;
+}
+
+.modal .card-modal p{
+    color: var(--blue);
+    font-size: 4rem;
+    font-family: var(--fonte);
+}
+
+#data {
+    width: 15rem;
+    height: 5rem;
+}
