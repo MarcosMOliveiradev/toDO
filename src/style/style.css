@@ -70,19 +70,26 @@ li {
 
 .card{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-right: 20rem;
+    overflow-y: scroll;
 
-
-    width: 42.7rem;
+    width: 51rem;
     height: 59.2rem;
 
     background-color: var(--black);
 
     border-radius: 2rem;
+    padding-bottom: 1rem;
 }
 
-.lista {
+table {
+    display: flex;
+    flex-direction: column;
+}
+
+tr {
     margin-top: 1rem;
     /* margin-left: 1rem; */
 
@@ -98,7 +105,12 @@ li {
     border-radius: 1rem;
 }
 
-.lista .data {
+td .data{
+    display: flex;
+    flex-direction: column;
+}
+
+.data {
     display: flex;
     flex-direction: column;
 
@@ -109,27 +121,28 @@ li {
     margin-left: 1.2rem;
 }
 
-.lista .data span {
+.data span {
     font-size: 2.3rem;
     color: var(--black-pink);
 }
-.lista .data p {
+
+.data p{
     font-size: 6.3rem;
     font-family: var(--fonte);
     color: var(--pink);
     margin-top: -1rem;
 }
 
-.lista h2 {
+td h2 {
     display: flex;
     justify-content: center;
     align-items: center;
 
     font-family: var(--fonte);
-    font-size: 4.5rem;
+    font-size: 2rem;
 }
 
-.lista button {
+td button {
     margin-right: 1rem;
     height: 2rem;
     width: 2rem;
@@ -146,6 +159,16 @@ li {
 
     margin-top: 1rem;
 }
+
+.descricao {
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: 1.2rem;
+    height: 10rem;
+    width: 12rem;
+}
+
+
 section .home h1{
     margin-top: 3.9rem;
     margin-left: 20rem;
