@@ -13,15 +13,15 @@ export async function criarTarefa(dataTarefa, paragrafoTarefa, tituloTarefa, des
 
     linhaData.classList = "data"
 
-    span.textContent = dataTarefa
-    paragrafo.textContent = paragrafoTarefa
+    span.textContent = await dataTarefa
+    paragrafo.textContent = await paragrafoTarefa
 
-    h2.textContent = tituloTarefa
+    h2.textContent = await tituloTarefa
     linhaTitulo.appendChild(h2)
 
     linhaDescricao.classList = "descricao"
 
-    linhaDescricao.textContent = descricao
+    linhaDescricao.textContent = await descricao
 
 
     button.textContent = "X"
