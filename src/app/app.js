@@ -1,10 +1,8 @@
-import { criarTarefa } from "./cirateLista.js";
+import { cria } from "./listarAfazeres.js";
 
 document.querySelector("#mais").addEventListener("click", addModal);
 document.querySelector("#modalX").addEventListener("click", closeModal);
-// document.querySelector("#salvar").addEventListener("click", closeModal);
 const form = document.getElementById('form')
-
 const tb = document.getElementById("tb")
 
 form.addEventListener('submit', async function(e){
@@ -33,13 +31,6 @@ form.addEventListener('submit', async function(e){
     e.preventDefault();
 })
 
-function cria() {
-    // newTodo.forEach(async (e) => {
-    //     const newTabela = await criarTarefa(e.mes, e.dia, e.titulo, e.descricao, e.id)
-    //     tb.appendChild(newTabela)
-    // })
-}
-
 cria()
 
 function addModal(){
@@ -49,24 +40,3 @@ function addModal(){
 function closeModal(){
     document.querySelector("#modal").classList.add("transparente")
 }
-
-const deletar = document.querySelectorAll("button")
-
-
-async function delet() {
-    deletar.forEach((e) => {
-        e.addEventListener('click', async () => {
-            const trElement = e.closest('tr');
-            if (trElement) {
-                const id = trElement.id
-        
-                const remove = document.getElementById(id);
-                if (remove) {
-                    remove.parentElement.removeChild(remove);
-                }
-            }
-        })
-    })
-}
-
-await delet()

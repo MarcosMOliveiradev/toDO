@@ -25,6 +25,7 @@ export async function criarTarefa(dataTarefa, paragrafoTarefa, tituloTarefa, des
 
 
     button.textContent = "X"
+    
 
     linhaButton.appendChild(button)
 
