@@ -12,7 +12,7 @@ interface IToDoResponse {
     toDo: Todo
 }
 
-export class createdToDo {
+export class CreatedToDo {
     constructor(private toDoRepository: ToDoRepository){}
 
     async create(request: IToDoRequest): Promise<IToDoResponse> {

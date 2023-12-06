@@ -3,8 +3,8 @@ import { ToDoRepository } from "../../application/repositories/ToDoRepository";
 import { prisma } from "../prisma";
 
 export class PrismaToDoRepository extends ToDoRepository{
-    async created(todo: Todo): Promise<void> {
-        await prisma.todo.create({
+    async created(todo: Todo) {
+        const create = await prisma.todo.create({
             data: {
                 id: todo.id,
                 mes: todo.mes,
@@ -14,5 +14,7 @@ export class PrismaToDoRepository extends ToDoRepository{
                 createdAt: todo.createdAt,
             }
         })
+
+        return create
     }
 }

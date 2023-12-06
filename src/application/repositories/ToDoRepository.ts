@@ -1,5 +1,5 @@
 import { Todo } from "../entites/ToDo";
 
 export abstract class ToDoRepository {
-    abstract created(todo: Todo): Promise<void>
+    abstract created(todo: Todo): Promise<Todo>
 }
