@@ -13,7 +13,6 @@ const repositories = new PrismaToDoRepository()
 const createdToDo = new CreatedToDo(repositories)
 const List = new ListToDo(repositories)
 const delet = new DeletToDo(repositories)
-
 // controller
 const createToDoController = new CreateToDoController(createdToDo)
 const listController = new ListToDOController(List)
@@ -27,7 +26,6 @@ export async function toDo(app: FastifyInstance) {
     app.get('/', async (request, reply) => {
         return listController.ListController(request, reply)
     })
-
     app.delete('/:id', async (request, reply) => {
         return deletController.exec(request, reply)
     })
