@@ -5,7 +5,7 @@ import { CreatedToDo } from './CreatedToDo'
 
 let toDoRepository: ToDoRepository
 let sut: CreatedToDo
-describe('create a new todo', () => {
+describe('Create a new to do', () => {
     beforeEach(() => {
         toDoRepository = new InMemoryToDo()
         sut = new CreatedToDo(toDoRepository)

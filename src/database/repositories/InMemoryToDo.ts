@@ -3,6 +3,20 @@ import { ToDoRepository } from "../../application/repositories/ToDoRepository";
 
 export class InMemoryToDo extends ToDoRepository{
     public item: Todo[] = []
+
+    async delet(id: string): Promise<void> {
+        this.item = await this.item.filter((e) => e.id !== id)
+    }
+
+    async id(id: string): Promise<string> {
+        const exist = this.item.find((e) => e.id === id)
+
+        if(!exist) {
+            return null
+        }
+
+        return exist
+    }
     async list(): Promise<Todo> {
         const response = this.item.find((e) => e)
 

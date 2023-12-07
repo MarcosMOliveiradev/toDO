@@ -1,34 +1,30 @@
 import { beforeEach, describe, expect, it} from 'vitest'
 import { ToDoRepository } from '../repositories/ToDoRepository'
 import { InMemoryToDo } from '../../database/repositories/InMemoryToDo'
-import { ListToDo } from './ListToDO'
+import { DeletToDo } from './DeletToDo'
 import { Todo } from '../entites/ToDo'
 
 let toDoRepository: ToDoRepository
-let sut: ListToDo
-describe('create a new todo', () => {
+let sut: DeletToDo
+describe('Delet a to do', () => {
     beforeEach(() => {
         toDoRepository = new InMemoryToDo()
-        sut = new ListToDo(toDoRepository)
+        sut = new DeletToDo(toDoRepository)
     })
-    it('should be possible list a to do', async () => {
+    it('should be possible delet a to do', async () => {
         const crear = new Todo({
             mes: 'setembro',
             dia: '10',
             titulo: 'Nova Atividade',
             descricao: ''
         })
+
         await toDoRepository.created(crear)
 
-        const crear2 = new Todo({
-            mes: 'setembro',
-            dia: '10',
-            titulo: 'Nova Atividade',
-            descricao: ''
-        })
-        await toDoRepository.created(crear2)
+        const id = crear.id
 
-        const toDo = await sut.List()
-        await expect(toDo.id).toEqual(expect.any(String))
+        const todo = await sut.delet({id})
+
+        await expect(todo).toEqual(expect.any(String))
     })
 })
