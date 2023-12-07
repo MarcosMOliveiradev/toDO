@@ -33,6 +33,15 @@ header .header{
 .logo{
     font-size: 3.5rem;
     font-weight: bold;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logoIMG {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
 }
 
 .buttonMais{

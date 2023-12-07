@@ -1,8 +1,10 @@
 import { criarTarefa } from './cirateLista.js'
+import { env_api } from './env.js'
 
 export async function cria() {
     try {
-        const response = await fetch('http://192.168.0.64:3131/todo', {
+        env_api
+        const response = await fetch(`${env_api}:3131/todo`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,6 +32,17 @@ export async function cria() {
                 
                         const remove = document.getElementById(id);
                         if (remove) {
+                            try {
+                                env_api
+                                await fetch(`${env_api}:3131/todo/${id}`, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    }
+                                })
+                            } catch (err) {
+                                throw err
+                            }
                             remove.parentElement.removeChild(remove);
                         }
                     }

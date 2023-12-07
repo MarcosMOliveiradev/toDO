@@ -1,3 +1,4 @@
+import { env_api } from "./env.js";
 import { cria } from "./listarAfazeres.js";
 
 document.querySelector("#mais").addEventListener("click", addModal);
@@ -14,7 +15,8 @@ form.addEventListener('submit', async function(e){
     const mes = newData[1]
 
     try {
-        const response = await fetch('http://192.168.0.64:3131/todo', {
+        env_api
+        const response = await fetch(`${env_api}:3131/todo`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
