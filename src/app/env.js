@@ -1,1 +1,1 @@
-export const env_api = 'http://192.168.0.64'
+export const env_api = 'https://doo-git-main-marcosmoliveiradev.vercel.app'

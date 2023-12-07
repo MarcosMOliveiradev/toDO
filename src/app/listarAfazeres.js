@@ -4,7 +4,7 @@ import { env_api } from './env.js'
 export async function cria() {
     try {
         env_api
-        const response = await fetch(`${env_api}:3131/todo`, {
+        const response = await fetch(`${env_api}/todo`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export async function cria() {
                         if (remove) {
                             try {
                                 env_api
-                                await fetch(`${env_api}:3131/todo/${id}`, {
+                                await fetch(`${env_api}/todo/${id}`, {
                                     method: 'DELETE',
                                     headers: {
                                         'Content-Type': 'application/json',

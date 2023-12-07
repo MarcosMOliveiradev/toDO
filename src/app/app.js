@@ -16,15 +16,13 @@ form.addEventListener('submit', async function(e){
 
     try {
         env_api
-        const response = await fetch(`${env_api}:3131/todo`, {
+        await fetch(`${env_api}/todo/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({mes, dia, titulo, descricao})
         })
-
-        console.log(response)
     }catch(err) {
         throw err
     }
