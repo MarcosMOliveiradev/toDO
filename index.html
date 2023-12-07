@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@700&family=Merriweather+Sans:wght@400;500;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+
+    <!----- ESTILOS ------>
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/modal.css">
+
+    <!-- <link rel="shortcut icon" type="imagex/png" href="./src/img/Logo.ico"> -->
+
+
+    <title>Lista de afazeres</title>
+</head>
+<body>
+
+    <div class="modal transparente" id="modal">
+        <div class="card-modal">
+            <div class="modalX">
+                <button id="modalX">x</button>
+            </div>
+            <p>TAREFA</p>
+            <div>
+                <form id="form">
+                    <input type="text" placeholder="Data para ecexução" name="data" id="data">
+                    <input type="text" placeholder="Titulo" name="titulo" id="titulo">
+                    <textarea placeholder="Descrição de tarefa" name="area-texte" id="texto" cols="30" rows="10"></textarea>
+                    <input class="button" type="submit" value="Salvar" id="salvar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="header">
+            <p class="logo">
+                <span>DOO</span>
+                <img src="./src/img/Logo.ico" class="logoIMG" alt="Logo">
+            </p>
+            <button class="buttonMais" id="mais">+</button>
+        </div>
+    </header>
+
+    
+    <section>
+        <div class="home">
+            <h1>
+                LISTA DE AFAZERES DIARIOS
+            </h1>
+            <img src="./src/img/central.svg" alt="Imagem toDo">
+                <table class="card" id="tb">
+                    
+                </table>
+        </div>
+    </section>
+    
+</body>
+
+<script type="module" src="./src/app/app.js"></script>
+</html>
