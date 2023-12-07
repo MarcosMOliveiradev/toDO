@@ -1,4 +1,3 @@
-import { todo } from "node:test";
 import { Todo } from "../../application/entites/ToDo";
 import { ToDoRepository } from "../../application/repositories/ToDoRepository";
 import { prisma } from "../prisma";
@@ -25,12 +24,12 @@ export class PrismaToDoRepository extends ToDoRepository{
         })
     }
 
-    async list(): Promise<Todo> {
-        const response = await prisma.todo.findMany()
+    async list(): Promise<any> {
+        const Todo = await prisma.todo.findMany()
 
-        return response
+        return Todo
     }
-    async created(todo: Todo): Promise<Todo> {
+    async created(todo: Todo): Promise<any> {
         const create = await prisma.todo.create({
             data: {
                 id: todo.id,
