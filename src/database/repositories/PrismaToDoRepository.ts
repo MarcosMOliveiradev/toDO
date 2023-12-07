@@ -30,7 +30,7 @@ export class PrismaToDoRepository extends ToDoRepository{
 
         return response
     }
-    async created(todo: Todo) {
+    async created(todo: Todo): Promise<Todo> {
         const create = await prisma.todo.create({
             data: {
                 id: todo.id,
