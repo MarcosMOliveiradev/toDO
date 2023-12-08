@@ -31,8 +31,10 @@ export async function toDo(app: FastifyInstance) {
         return deletController.exec(request, reply)
     })
 
-    app.get('/index', (request, reply) => {
-        const resolve = path.resolve(__dirname, '../', '../');
-        reply.view(`${resolve}/index.html`, { page: 'index' });
+    app.get('/index', async (request, reply) => {
+        const resolvePath = (relativePath: any) => path.resolve(__dirname, '..', relativePath);
+      
+        const indexPath = resolvePath('src/index.html');
+        reply.view(indexPath, { page: 'index' });
       });
 }
