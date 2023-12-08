@@ -9,9 +9,9 @@ import path from 'node:path'
 
 const app = fastify()
 
-app.register(fastifyStatic, {
-    root: path.join(__dirname, '../', '../', '../')
-})
+// app.register(fastifyStatic, {
+//     root: path.join(__dirname, '../', '../', '../')
+// })
 
 app.register(view, {
     engine: {
