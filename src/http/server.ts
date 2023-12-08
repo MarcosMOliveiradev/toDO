@@ -16,8 +16,7 @@ app.register(fastifyStatic, {
 app.register(view, {
     engine: {
         handlebars
-    },
-    templates: './'
+    }
 })
 
 app.register(cors, {
