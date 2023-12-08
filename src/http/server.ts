@@ -10,7 +10,7 @@ import path from 'node:path'
 const app = fastify()
 
 app.register(fastifyStatic, {
-    root: path.join(__dirname, '../', '../')
+    root: path.join(__dirname, '../', '../', '../')
 })
 
 app.register(view, {
@@ -18,10 +18,6 @@ app.register(view, {
         handlebars
     },
     templates: './'
-})
-
-app.get('/index', (request, reply) => {
-    reply.view('index.html', { page: 'index' })
 })
 
 app.register(cors, {

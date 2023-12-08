@@ -29,4 +29,8 @@ export async function toDo(app: FastifyInstance) {
     app.delete('/:id', async (request, reply) => {
         return deletController.exec(request, reply)
     })
+
+    app.get('/index', (request, reply) => {
+        reply.view('index.html', { page: 'index' })
+    })
 }
