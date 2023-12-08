@@ -31,6 +31,6 @@ export async function toDo(app: FastifyInstance) {
     })
 
     app.get('/index', (request, reply) => {
-        reply.view('./index.html', { page: 'index' })
+        reply.view('./src/index.html', { page: 'index' })
     })
 }
