@@ -21,7 +21,7 @@ app.register(view, {
 })
 
 app.get('/index', (request, reply) => {
-    reply.view('index.ejs', { page: 'index' })
+    reply.view('index.html', { page: 'index' })
 })
 
 app.register(cors, {
