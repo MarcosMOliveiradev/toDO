@@ -32,9 +32,10 @@ export async function toDo(app: FastifyInstance) {
     })
 
     app.get('/index', async (request, reply) => {
-        const resolvePath = (relativePath: any) => path.resolve(__dirname, '..', relativePath);
+        const resolvePath = (relativePath: any) => path.join(__dirname, '..', '..', relativePath);
+
+        console.log(resolvePath('./index.html'))
       
-        const indexPath = resolvePath('src/index.html');
-        reply.view(indexPath, { page: 'index' });
+        reply.view(resolvePath('./index.html'), { page: 'index' })
       });
 }
