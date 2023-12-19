@@ -27,10 +27,11 @@ app.register(toDo, {
     prefix: '/todo'
 })
 
+const ports = parseInt(process.env.PORT) || 3131
 
 app.listen({
-    port: 3131,
+    port: ports,
     host: '0.0.0.0'
 }).then(() => {
-    console.log('HTTP Server running in localhost port 3131')
+    console.log(`HTTP Server running in localhost port ${ports}`)
 })

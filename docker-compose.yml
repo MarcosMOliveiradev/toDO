@@ -1,0 +1,30 @@
+version: '3'
+services:
+    postgres:
+        image: postgres:14-alpine
+        ports:
+          - 5432:5432
+        environment:
+          - POSTGRES_PASSWORD=abc.123
+          - POSTGRES_USER=admin
+          - POSTGRES_DB=doo
+
+    app:
+        build: .
+        image: app
+        command: npm rum dev
+        ports:
+          - 3132:3132
+        environment:
+          DATABASE_URL: postgres
+          PORT: 3132
+        volumes:
+          - ./:/test/
+          - nodemodules:/test/node_modules
+        links:
+          - postgres
+        depends_on:
+          - postgres
+
+volumes:
+    nodemodules: {}
