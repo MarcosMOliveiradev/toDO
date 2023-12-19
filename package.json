@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "npx tsx",
-    "dev": "npx prisma generate && tsx watch ./src/http/server.ts",
+    "dev": "npx prisma migrate dev && tsx watch ./src/http/server.ts",
     "test": "vitest run",
     "vercel-build": "npx prisma generate && npx prisma migrate deploy"
   },

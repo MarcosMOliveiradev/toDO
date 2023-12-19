@@ -5,9 +5,9 @@ services:
         ports:
           - 5432:5432
         environment:
-          - POSTGRES_PASSWORD=abc.123
-          - POSTGRES_USER=admin
-          - POSTGRES_DB=doo
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: abc.123
+          POSTGRES_DB: doo
 
     app:
         build: .
@@ -16,7 +16,7 @@ services:
         ports:
           - 3132:3132
         environment:
-          DATABASE_URL: postgres
+          DATABASE_URL: "postgres://postgres:abc.123@postgres:5432/doo?schema=public"
           PORT: 3132
         volumes:
           - ./:/test/
