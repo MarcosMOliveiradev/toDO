@@ -13,7 +13,7 @@ app.register(view, {
     engine: {
         handlebars,
     },
-    templates:  path.resolve(__dirname)
+    templates:  path.join(__dirname)
 })
 
 app.register(fastifyStatic, {
