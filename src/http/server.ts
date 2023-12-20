@@ -27,6 +27,10 @@ app.register(toDo, {
     prefix: '/todo'
 })
 
+if (process.env.PORT === undefined) {
+    throw new Error("Erro na variavel de ambiente de porta")
+}
+
 const ports = parseInt(process.env.PORT) || 3131
 
 app.listen({
