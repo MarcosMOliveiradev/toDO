@@ -9,15 +9,20 @@ import path from 'node:path'
 
 const app = fastify()
 
-app.register(fastifyStatic, {
-    root: path.join(__dirname, '../', '../', '../')
-})
-
 app.register(view, {
     engine: {
-        handlebars
-    }
+        handlebars,
+    },
+    templates: './'
 })
+
+app.register(fastifyStatic, {
+    root: path.join(__dirname, '../', '../')
+})
+
+app.get('/index', (request, reply) => {
+    reply.view('index.html', { page: 'index' })
+});
 
 app.register(cors, {
     origin: true,
@@ -26,10 +31,6 @@ app.register(cors, {
 app.register(toDo, {
     prefix: '/todo'
 })
-
-if (process.env.PORT === undefined) {
-    throw new Error("Erro na variavel de ambiente de porta")
-}
 
 const ports = parseInt(process.env.PORT) || 3131
 

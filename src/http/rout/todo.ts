@@ -6,7 +6,7 @@ import { ListToDo } from "../../application/useCase/ListToDO";
 import { ListToDOController } from "../controllers/ListToDoController";
 import { DeletToDo } from "../../application/useCase/DeletToDo";
 import { DeletToDoController } from "../controllers/DeletToDoController";
-import path, { resolve } from "node:path";
+import path from "node:path";
 
 const repositories = new PrismaToDoRepository()
 
@@ -32,10 +32,7 @@ export async function toDo(app: FastifyInstance) {
     })
 
     app.get('/index', async (request, reply) => {
-        const resolvePath = (relativePath: any) => path.join(__dirname, '..', '..', relativePath);
-
-        console.log(resolvePath('./index.html'))
-      
-        reply.view(resolvePath('./index.html'), { page: 'index' })
+        // const resolvePath = (relativePath: any) => path.join(__dirname, '..', '..', relativePath);
+        reply.view('index.html', { page: 'index' })
       });
 }
