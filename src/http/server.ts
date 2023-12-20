@@ -13,11 +13,11 @@ app.register(view, {
     engine: {
         handlebars,
     },
-    templates: './'
+    templates:  path.resolve(__dirname, '../', '../')
 })
 
 app.register(fastifyStatic, {
-    root: path.join(__dirname)
+    root: path.join(__dirname, '../', '../')
 })
 
 app.get('/index', (request, reply) => {
