@@ -17,7 +17,7 @@ app.register(view, {
 })
 
 app.register(fastifyStatic, {
-    root: path.join(__dirname, '../', '../')
+    root: path.join(__dirname)
 })
 
 app.get('/index', (request, reply) => {
